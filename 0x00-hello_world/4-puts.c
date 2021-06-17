@@ -9,5 +9,5 @@ int main(void)
 
 	puts(Myfirst);
 
-	return(0);
+	return (0);
 }
