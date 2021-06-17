@@ -1,6 +1,6 @@
 #include<stdio.h>
 /**
- * main - size of data types 
+ * main - size of data types
  * Return: 0
  */
 int main(void)
