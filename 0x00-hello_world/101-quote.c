@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-	char Myfirst[] = "and that piece of art is useful\" - Dora Korpar,\
+	char Myfirst[] = "and that piece of art is useful\" - Dora Korpar, \
 2015-10-19\n";
 	int i = 0;
 
