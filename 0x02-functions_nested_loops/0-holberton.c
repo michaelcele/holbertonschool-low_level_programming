@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
-*print_alphabet_x10 - print the alphabet 10 times
+*Main - print the word holberton
 *
 */
 int main(void)
