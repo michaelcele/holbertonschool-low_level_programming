@@ -12,4 +12,6 @@ int _islower(int c);
 int _isalpha(int c);
 /*print sign '+, - or 0 if is greater less or equal to 0*/
 int print_sign(int n);
+/*print sign '+, - or 0 if is greater less or equal to 0*/
+int _abs(int);
 #endif
