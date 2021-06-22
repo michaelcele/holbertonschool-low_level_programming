@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * _islower- Return 1 if c is lowercase
+ * _isalpha- Return 1 if c is lowercase or uppercase
  *
  * @c: is lowercase or other thing
  *
@@ -13,7 +13,7 @@ int _isalpha(int c)
 		return (1);
 	}
 
-	else if (c >= 65 && c <=90)
+	else if (c >= 65 && c <= 90)
 	{
 		return (1);
 	}
