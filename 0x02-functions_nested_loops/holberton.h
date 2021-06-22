@@ -10,4 +10,6 @@ void print_alphabet_x10(void);
 int _islower(int c);
 /*Return 1 if is c is lowercase or uppercase*/
 int _isalpha(int c);
+/*print sign '+, - or 0 if is greater less or equal to 0*/
+int print_sign(int n);
 #endif
