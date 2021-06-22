@@ -14,4 +14,6 @@ int _isalpha(int c);
 int print_sign(int n);
 /*print sign '+, - or 0 if is greater less or equal to 0*/
 int _abs(int);
+/*print last digit*/
+int print_last_digit(int);
 #endif
