@@ -1,9 +1,9 @@
 #include "holberton.h"
-
 /**
-*Main - print the word holberton
-*
-*/
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
 	char holbi[] = "Holberton\n";
