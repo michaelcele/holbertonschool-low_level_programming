@@ -20,4 +20,6 @@ int print_last_digit(int);
 void jack_bauer(void);
 /*print times table*/
 void times_table(void);
+/*adds two integers*/
+int add(int, int);
 #endif
