@@ -2,8 +2,10 @@
 #define HOLBERTON_H
 /*function putchar holberton*/
 int _putchar(char c);
-/*function putchar holberton*/
+/*return 1 if c is uppercase*/
 int _isupper(int c);
-/*function putchar holberton*/
+/*Return 1 if c is a digit*/
 int _isdigit(int c);
+/*multiplies two */
+int mul(int a, int b);
 #endif
