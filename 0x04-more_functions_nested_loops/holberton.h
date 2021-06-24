@@ -4,4 +4,6 @@
 int _putchar(char c);
 /*function putchar holberton*/
 int _isupper(int c);
+/*function putchar holberton*/
+int _isdigit(int c);
 #endif
