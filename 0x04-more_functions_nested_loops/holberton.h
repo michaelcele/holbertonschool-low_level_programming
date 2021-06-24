@@ -8,4 +8,6 @@ int _isupper(int c);
 int _isdigit(int c);
 /*multiplies two */
 int mul(int a, int b);
+/*Print numbers of 0 to 9*/
+void print_numbers(void);
 #endif
