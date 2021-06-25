@@ -10,4 +10,6 @@ int _isdigit(int c);
 int mul(int a, int b);
 /*Print numbers of 0 to 9*/
 void print_numbers(void);
+/*Print numbers of 0 to 9 excluding the 2 and 4*/
+void print_most_numbers(void);
 #endif
