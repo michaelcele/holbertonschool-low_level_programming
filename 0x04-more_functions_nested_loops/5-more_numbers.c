@@ -1,23 +1,23 @@
 #include "holberton.h"
 /**
- * more_numbers  - print numbers of 0 to 9, 10 times.
+ * more_numbers  - print numbers of 0 to 14, 10 times.
  *
  */
 void more_numbers(void)
 {
 
-	int j = 0;
+	char i[] = "01234567891011121314\n";
+	int k = 0;
 
-	while (j <= 9)
+	while (k <= 9)
 	{
-		char i = '0';
+		int j = 0;
 
-		while (i <= '9')
+		while (i[j])
 		{
-			_putchar(i);
-			i++;
+			_putchar(i[j++]);
 		}
-	_putchar('\n');
-	j++;
+		k++;
 	}
+
 }
