@@ -12,4 +12,6 @@ int mul(int a, int b);
 void print_numbers(void);
 /*Print numbers of 0 to 9 excluding the 2 and 4*/
 void print_most_numbers(void);
+/*Print numbers of 0 to 9 10 times*/
+void more_numbers(void);
 #endif
