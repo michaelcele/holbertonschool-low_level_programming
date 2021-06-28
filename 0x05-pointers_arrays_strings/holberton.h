@@ -2,4 +2,6 @@
 #define HOLBERTON_H
 /*change value to 98*/
 void reset_to_98(int *n);
+/*change value to 98*/
+void swap_int(int *a, int *b);
 #endif
