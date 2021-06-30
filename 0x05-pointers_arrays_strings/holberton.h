@@ -20,4 +20,6 @@ void rev_string(char *s);
 void puts2(char *str);
 /*Prints half of a string*/
 void puts_half(char *str);
+/*Prints half of a string*/
+void print_array(int *a, int n);
 #endif
