@@ -18,4 +18,6 @@ void print_rev(char *s);
 void rev_string(char *s);
 /*Prints every other character of a string*/
 void puts2(char *str);
+/*Prints half of a string*/
+void puts_half(char *str);
 #endif
