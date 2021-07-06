@@ -1,5 +1,7 @@
 #ifndef HOLBERONT_H 
 #define HOLBERTON_H 
+/*function putchar holberton*/
+int _putchar(char c);
 /* fills memory with a constant byte.*/
 char *_memset(char *s, char b, unsigned int n);
 /* copies memory area.*/
@@ -14,4 +16,6 @@ char *_strpbrk(char *s, char *accept);
 char *_strstr(char *haystack, char *needle);
 /*prints the chessboard.*/
 void print_chessboard(char (*a)[8]);
+/*prints the chessboard.*/
+void print_diagsums(int *a, int size);
 #endif
