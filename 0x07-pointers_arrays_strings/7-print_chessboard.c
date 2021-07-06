@@ -2,7 +2,7 @@
 
 /**
  * print_chessboard - print chess
- * @a: pointer
+ * @a: array
  */
 void print_chessboard(char (*a)[8])
 {
@@ -12,8 +12,8 @@ void print_chessboard(char (*a)[8])
 	{
 		for (i = 0; i < 8; i++)
 		{
-			printf("%c", a[j][i]);
+			_putchar(a[i][j]);	
 		}
-		printf("\n");
+		_putchar("\n");
 	}
 }
