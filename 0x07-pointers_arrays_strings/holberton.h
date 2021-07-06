@@ -8,4 +8,6 @@ char *_memcpy(char *dest, char *src, unsigned int n);
 char *_strchr(char *s, char c);
 /*gets the length of a prefix substring.*/
 unsigned int _strspn(char *s, char *accept);
+/*string for any of a set of bytes.*/
+char *_strpbrk(char *s, char *accept);
 #endif
