@@ -6,7 +6,7 @@
  * _strspn - len of a prefix substring
  * @s: - string
  * @accept: - group os characters
- * Return: len 
+ * Return: len
  */
 unsigned int _strspn(char *s, char *accept)
 {
