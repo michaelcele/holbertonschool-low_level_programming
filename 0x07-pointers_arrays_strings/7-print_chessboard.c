@@ -1,16 +1,22 @@
 #include "holberton.h"
+
 /**
- * print_chessboard - print chess
- * @a: pointer
+ * print_chessboard - prints a chessboard
+ * @a: matrix
+ *
+ * Return: On success 1.
  */
 void print_chessboard(char (*a)[8])
 {
-	int col, row;
+	int i, j, size;
 
-	for (row = 0; row < 8; row++)
+	size = 8;
+	for (i = 0; i < size; i++)
 	{
-		for (col = 0; col < 8; col++)
-			printf("%c", a[row][col]);
-		printf("\n");
+		for (j = 0; j < size; j++)
+		{
+			_putchar(a[i][j]);
+		}
+		_putchar('\n');
 	}
 }
