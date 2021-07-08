@@ -17,12 +17,8 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	else
-	{
-
-		a = atoi(argv[i + 1]) * atoi(argv[i + 2]);
-		printf("%d\n", a);
-	}
+	a = atoi(argv[i + 1]) * atoi(argv[i + 2]);
+	printf("%d\n", a);
 
 	return (0);
 }
