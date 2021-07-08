@@ -7,11 +7,11 @@
  *
  * Return: Always 0
  */
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
 	int i = 0;
 
-	
+
 	while (i != argc - 1)
 	{
 		i++;
@@ -19,5 +19,5 @@ int main(int argc, char* argv[])
 	printf("%d\n", i);
 	argv[0] = argv[i];
 
-	return (0);	
+	return (0);
 }
