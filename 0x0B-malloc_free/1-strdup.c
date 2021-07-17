@@ -14,10 +14,10 @@ char *_strdup(char *str)
 
 	if (str == NULL)
 		return (NULL);
-	
+
 	s = (char *)malloc(strlen(str) + 1);
 	if (!s)
-		return (NULL); 
+		return (NULL);
 	if (s)
 		strcpy(s, str);
 
