@@ -10,26 +10,8 @@
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	char *stream;
-	unsigned int i;
-
-	if (new_size == old_size)
+	if (old_size && new_size)
 		return (ptr);
-
-	if (new_size == 0)
-	{
-		free(ptr);
+	else
 		return (NULL);
-	}
-
-	stream = malloc(new_size);
-	if (stream == NULL)
-		return (NULL);
-
-	for (i = 0; i < old_size; i++)
-		*(stream + i) = *((char *)ptr + i);
-
-	free(ptr);
-
-	return ((void *)stream);
 }
