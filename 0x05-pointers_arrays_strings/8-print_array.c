@@ -21,5 +21,5 @@ void print_array(int *a, int n)
 		i++;
 	}
 	if (n <= 0)
-		return (NULL);
+		return (0);
 }
