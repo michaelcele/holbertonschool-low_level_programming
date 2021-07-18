@@ -6,15 +6,11 @@
  * @n: integer
  *
  */
-void print_array(int *array, int n)
+void print_array(int *a, int n)
 {
-	int j;
+	int i;
 
-	for (j = 0; j < n; j++)
-	{
-		if (i > 0)
-			printf(", ");
-		printf("%d", *(array + i));
-	}										}
-	printf("\n");
+	for (i = 0; i < (n - 1); i++)
+		printf ("%d, ", *(a + i));
+	printf("%d\n", *(a +i));
 }
