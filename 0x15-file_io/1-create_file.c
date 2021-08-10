@@ -1,45 +1,51 @@
 #include "main.h"
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdlib.h>
+#include <stdio.h>
+#define S_IRWUSR (S_IRUSR | S_IWUSR)
+#define O_CREATE (O_APPEND | O_WRONLY)
 
 /**
- * create_file - creates a file
- *
- * @filename: name of the file
- * @text_content: NULL terminated string to write to the file
- *
- * Return: Returns: 1 on success, -1 on failure
- * file can not be created, file can not be written, write “fails”, etc…
- * The created file must have those permissions: rw-------.
- * If the file already exists, do not change the permissions.
- * if filename is NULL return -1
- * if text_content is NULL create an empty file
- */
+* length_str - function that creates a file.
+* @string: string
+* Return: get length of string
+*/
+size_t length_str(const char *string)
+{
+	return ((*string == '\0') ? 0 : 1 + length_str(string + 1));
+}
+
+/**
+* create_file - function that creates a file.
+* @filename: filename
+* @text_content: text_content
+* Return: the actual number of letters it could read and print
+*/
 int create_file(const char *filename, char *text_content)
 {
-	int fd, checkw, l = 0;
+	int file_id;
+	ssize_t number_of_bytes_written;
 
-	if (filename == 0)
+	if (filename == NULL)
+		return (1);
+
+	/*file_id = open(filename, O_CREATE, S_IRWUSR);*/
+	file_id = open(filename, O_APPEND | O_WRONLY, 0600);
+
+	if (file_id == -1)
 		return (-1);
 
-	fd = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
-
-	if (fd == -1)
-		return (-1);
-
-	if (text_content)
+	if (text_content == NULL)
 	{
-		while (text_content[l] != 0)
-			l++;
-		checkw = write(fd, text_content, l);
-
-		if (checkw == -1)
-			return (-1);
+		close(file_id);
+		return (1);
 	}
 
-	close(fd);
-	return (1);
+	number_of_bytes_written = write(
+		file_id,
+		text_content,
+		length_str(text_content)
+	);
+
+	close(file_id);
+
+	return ((number_of_bytes_written == -1) ? -1 : 1);
 }
