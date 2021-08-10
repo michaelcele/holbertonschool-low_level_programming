@@ -1,51 +1,41 @@
 #include "main.h"
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdlib.h>
 
 /**
- * read_textfile -  reads a text file and prints it
- * to the POSIX standard output
- * @filename: name of the file
- * @letters: number of letters it should read and print
- *
- * Return: returns the actual number of letters it could read and print
- * 0 if file cannot be opened or read
- * 0 if filename is NULL
- * 0 if write fails or does not write expected amount of bytes
- */
+* read_textfile - function that reads a text file and prints it to the POSIX
+*        standard output.
+*
+* @filename: filename
+* @letters: letters
+* Return: the actual number of letters it could read and print
+*/
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd, checkr, checkw;
-	char *c;
+	char *buffer;
+	int file_id;
+	ssize_t number_of_bytes_read;
+	ssize_t number_of_bytes_written;
 
-	if (filename == 0)
+	file_id = open(filename, O_RDONLY);
+	if (file_id == -1)
 		return (0);
 
-	c = malloc(letters + 1);
+	buffer = malloc(sizeof(*filename) * letters);
 
-	if (c == 0)
+	if ((filename == NULL) | (buffer == NULL) | !letters)
+	{
+		close(file_id);
+		return (0);
+	}
+
+	number_of_bytes_read = read(file_id, buffer, letters);
+	close(file_id);
+	if (number_of_bytes_read == -1)
 		return (0);
 
-	fd  = open(filename, O_RDONLY);
+	number_of_bytes_written = write(1, buffer, (size_t)number_of_bytes_read);
+	if (number_of_bytes_written == -1)
+		return (0);
 
-	if (fd == -1)
-		return (free(c), 0);
-
-	checkr = read(fd, c, letters);
-
-	if (checkr == -1)
-		return (free(c), 0);
-
-	c[letters] = '\0';
-
-	checkw = write(STDOUT_FILENO, c, checkr);
-	if (checkw == -1)
-		return (free(c), 0);
-
-	free(c);
-	close(fd);
-	return (checkw);
+	free(buffer);
+	return (number_of_bytes_read);
 }
